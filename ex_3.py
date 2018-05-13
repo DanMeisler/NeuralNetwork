@@ -55,10 +55,6 @@ class NeuralNetwork(object):
         self.b_input = np.random.uniform(-0.2, 0.2, (hidden_layer_size, 1))
         self.w_hidden = np.random.uniform(-0.2, 0.2, (len(classes), hidden_layer_size))
         self.b_hidden = np.random.uniform(-0.2, 0.2, (len(classes), 1))
-        # self.w_input = np.random.rand(hidden_layer_size, training_and_validation_set[0][0].shape[0])
-        # self.b_input = np.random.rand(hidden_layer_size, 1)
-        # self.w_hidden = np.random.rand(len(classes), hidden_layer_size)
-        # self.b_hidden = np.random.rand(len(classes), 1)
         self.params = None
 
     def predict(self, inputs):
@@ -111,8 +107,6 @@ class NeuralNetwork(object):
 
             np.random.shuffle(training_set)
 
-            # learning_rate = min(self.min_learning_rate * (1.05 ** (self.num_of_epochs - epoch_number - 1)),
-            #                     self.max_learning_rate)
             self.batch_size += 1
 
             training_correct_times_count = 0
